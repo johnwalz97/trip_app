@@ -1,0 +1,16 @@
+<div ng-controller="mapController">
+	<div id="control" class="large-2 medium-4 small-5 columns">
+		<h4><span class="start">Road Trip Options!</span></h4>
+		<hr>
+		<div class="start">
+			<p>Enter places you want to see along the way...</p>
+			<input id="add_point" type="text" ng-model="start_point" placeholder="enter any place, address, or zip">
+			<button ng-click="addPoint()" class="alert button learnButton">Add more waypoints!</button>
+		</div>
+	</div>
+	<div id="map-canvas" class="large-10 medium-8 small-7 columns"></div>
+	<script>
+		$("#control").show("slide", {direction: "left"}, 1000);
+        $("#map-canvas").show();
+	</script>
+</div>

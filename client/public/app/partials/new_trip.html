@@ -1,0 +1,64 @@
+<div class="page" ng-controller="newTripController">
+    <div class="row" style="text-align: center;">
+        <h1 class="header">Build a new Trip</h1>
+    </div>
+    <div class="row">
+        <div class="trip_form large-offset-3 medium-offset-2 small-offset-1 large-6 medium-8 small-10 columns">
+            <form>
+                <p class="text alert" ng-bind="errors"></p>
+                <div class="row">
+                    <div class="large-6 medium-6 small-12 columns">
+                        <label>Where are you starting your trip?</label>
+                        <input id="start" type="text" ng-model="trip.start" placeholder="Enter an address, city, or zip code">
+                    </div>
+                    <div class="large-6 medium-6 small-12 columns">
+                        <label>What's your destination?</label>
+                        <input id="end" type="text" ng-model="trip.destination" placeholder="Enter an address, city, or zip code">
+                    </div>      
+                </div>
+                <div class="row">
+                    <div class="large-6 medium-6 small-12 columns">
+                        <label>When do you want to leave?</label>
+                        <input type="date" ng-model="trip.beginDate">
+                    </div>
+                    <div class="large-6 medium-6 small-12 columns">
+                        <label>When are you coming back?</label>
+                        <input type="date" ng-model="trip.endDate">
+                    </div> 
+                </div>
+                <div class="row">
+                    <h6 style="text-align: center">How are you getting there?</h6>
+                </div>
+                <div class="row">
+                    <div class="vehicle-container large-offset-4 large-4 small-offset-2 small-8 columns">
+                        <div class="large-4 columns">
+                            <label for="car_box" class="vehicle-label" id="car"></label>
+                            <input id="car_box" value="car" ng-model="trip.travelMode" class="vehicle" type="radio" name="vehicle">
+                        </div>
+                        <div class="large-4 columns">
+                            <label for="motorcycle_box" class="vehicle-label" id="motorcycle"></label>
+                            <input id="motorcycle_box" value="motorcycle" ng-model="trip.travelMode"  class="vehicle" type="radio" name="vehicle">
+                        </div>
+                        <div class="large-4 columns">
+                            <label for="bike_box" class="vehicle-label" id="bike"></label>
+                            <input id="bike_box" value="bike" ng-model="trip.travelMode"  class="vehicle" type="radio" name="vehicle">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="text-align: center">
+                    <button class="button large alert" ng-click="validate()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row" style="text-align: center;">
+        <h1 class="header">Or open an old one!</h1>
+    </div>
+    <div class="row">
+        <div ng-repeat="trip in trips" ng-click="old_trip(trip)" class="trip large-4 medium-6 small-12 columns">
+            <h1 ng-bind="trip.destination"></h1>
+        </div>
+    </div>
+</div>
+<div class="background" id="background2"></div>

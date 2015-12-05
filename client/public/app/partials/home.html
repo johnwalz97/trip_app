@@ -1,0 +1,95 @@
+<div ng-controller="loginController">
+    <div class="dashboard">
+        <div class="row">
+            <div class="large-offset-11 medium-offset-11 Login">
+                <a href="#/" id="mylogin" class="button login">Login</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-offset-2 medium-offset-2 large-8 medium-8 columns welcome">
+                <h1>Welcome to your best road trip ever!</h1>
+                <hr>
+                <h3>Need some inspiration?</h3>
+                <a href="#/trips" class="button trips_button">See Other's Trips</a>
+            </div>     
+        </div>
+    </div>
+    <div class="background" id="background1"></div>
+    <div id="login" class="large-offset-4 medium-offset-4 medium-4 large-4 columns" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <div id="login_sect">
+            <div class="row">
+                <h1><u>Login</u></h1>
+            </div>
+            <div class="row">
+                <div class="form large-offset-2 medium-offset-2 large-8 medium-8 columns">
+                    <form>
+                        <p class="text alert" ng-bind="login.errors"></p>
+                        <label>Email:
+                            <input class="Lemail" type="email" ng-model="login.email" ng-change="login_email()" name="email" required>
+                        </label>
+                        <label>Password:
+                            <input class="Lpasswd" type="password" ng-model="login.password" ng-change="login_passwd" name="password" required>
+                        </label>
+                        <button class="button large alert log_submit" ng-click="submit_login()">Login</button></br>
+                    </form>
+                    <hr>
+                    <a href="#" id="register_click">Don't have an account, click here to register!</a>
+                </div>
+            </div>
+        </div>
+        <div id="register_sect">
+            <div class="row">
+                <h1><u>Register</u></h1>
+            </div>
+            <div class="row">
+                <div class="form large-offset-2 medium-offset-2 large-8 medium-8 columns">
+                    <form>
+                        <p class="text alert" ng-bind="register.errors"></p>
+                        <label>Name:
+                            <input class="Rname" type="text" ng-model="register.name" ng-change="register_name()" name="name" required>
+                        </label>
+                        <label>Email:
+                            <input class="Remail" type="text" ng-model="register.email" ng-change="register_email()" name="email" required>
+                        </label>
+                        <label>Password:
+                            <input class="Rpasswd" type="password" ng-model="register.password" ng-change="register_password()" name="password" required>
+                        </label>
+                        <button class="button large alert log_submit" ng-click="submit_register()">Register</button></br>
+                    </form>
+                    <hr>
+                    <a href="#" id="login_click">Already have an account, click here to login!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        $("#mylogin").click(function(e){
+            e.preventDefault();
+            $(".overlay").fadeIn()
+            $("#login").slideDown(300);
+            return false;
+        })
+        $(".overlay").click(function(){
+            $(this).fadeOut();
+            $("#login").slideUp(300);
+        })
+        $("#register_click").click(function(e){
+            e.preventDefault();
+            $("#login_sect").hide("slide", {direction: "right"}, 300, function(){
+                $("#register_sect").show("slide", {direction: "left"}, 300);
+            })
+            return false;
+        })
+        $("#login_click").click(function(e){
+            e.preventDefault();
+            $("#register_sect").hide("slide", {direction: "left"}, 300, function(){
+                $("#login_sect").show("slide", {direction: "right"}, 300);
+            })
+            return false;
+        })
+        $("input").focusout(function(){
+            $(this).removeClass("input_alert input_success")
+        })
+    </script>
+</div>

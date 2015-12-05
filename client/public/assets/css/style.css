@@ -1,0 +1,158 @@
+#control, #map-canvas {
+	position: absolute;
+	height: 100%;
+	display: none;
+}
+#map-canvas {
+	right: 0px;
+}
+#control {
+	left: 0px;
+	background: url('/assets/images/bg-body.png');
+	color: #000000;
+	padding-top: 30px;
+}
+#control h4 {
+	color: #ffffff;
+}
+.destination {
+	display: none;
+}
+.background {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: 0;
+}
+#background1 {
+	background: url("/assets/images/background.jpg")
+}
+#background2 {
+	background: url("/assets/images/background2.jpg")
+}
+.dashboard {
+	position: relative;
+	z-index: 1;
+}
+.welcome {
+	text-align: center;
+}
+.welcome h1 {
+	font-size: 74px;
+}
+.Login {
+	top: 3px;
+}
+.login {
+	width: 100px;
+	background: rgba(255, 255, 255, .3);
+	color: black;
+	font-size: 18px;
+}
+.login:hover {
+	background: rgb(255, 255, 255);
+	color: black;
+	text-decoration: underline;
+	font-size: 20px;
+}
+.trips {
+	text-align: center;
+	top: 50%;
+	border-radius: 10px;
+}
+.trips_button {
+	width: 50%;
+	min-width: 300px;
+	border-radius: 5px;
+	height: 60px;
+	background: rgba(0, 0, 0, .5);
+	font-size: 24px;
+}
+.overlay {
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0px;
+	top:  0px;
+	background: rgba(0, 0, 0, .5);
+	z-index: 98;
+}
+#login {
+	display: none;
+	position: fixed;
+	top: 50px;
+	text-align: center;
+	background: #fff;
+	z-index: 99;
+	padding-bottom: 50px
+}
+#register_sect {
+	display: none;
+}
+.input_alert {
+	box-shadow: 0 0 10px 5px #900 !important;
+}
+.input_success {
+	box-shadow: 0 0 10px 5px #090 !important;
+}
+.page {
+	position: relative;
+	z-index: 1;
+}
+.header {
+	color: white;
+}
+.trip_form {
+	background: white;
+	opacity: .95;
+	padding: 30px;
+	border-radius: 10px;
+}
+.vehicle-container input{
+	text-align: center;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+.vehicle-label{
+	display: inline-block;
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    width:50px;
+	height:50px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.vehicle-label:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+.vehicle-label:checked{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+#car {
+	background-image: url(/assets/images/car.png);
+	margin-top: 10px;
+}
+#motorcycle {
+	background-image: url(/assets/images/motorcycle.png);
+}
+#bike {
+	background-image: url(/assets/images/bicycle.png);
+}
+.trip {
+	cursor: pointer;
+}
