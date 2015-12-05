@@ -2,6 +2,7 @@
 angular.module("TripApp").controller("loginController", ['$rootScope', '$scope', '$location', 'loginFactory', function($rootScope, $scope, $location, loginFactory){
     
     //variables
+    //comment
     var letters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"];
     var register_flag;
     $scope.login = {};
